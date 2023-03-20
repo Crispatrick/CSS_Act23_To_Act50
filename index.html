@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CRISITE</h1>
+        <nav >
+            <ul class="headerLinks">
+                <li>
+                    Home
+                </li>
+                <li>
+                    About
+                </li>
+                <li>
+                    Help
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section >
+        <div class="gui">
+            <div class="box"></div>
+            <details class="instruction" open> 
+                <summary style="font-size: 25px;">Instruction</summary>
+                <p style="text-indent: 30px; font-size: 20px;">This is a functioning outline and border changer that shows how
+                different border or outline looks like. Click or tap the button so that it will change</p>    
+                                
+            </details>
+        </div>
+        
+        
+        <div class="boxInteract">
+            <div style="text-align: center;">
+                <h1>Border</h1>
+            </div>
+            <div class="buttons">
+                <button onclick="ridge()">Ridge</button>
+                <button onclick="inset()">Inset</button>
+                <button onclick="none()">None</button>
+                <button onclick="dotted()">Dotted</button>
+                <button onclick="dashed()">Dashed</button>
+                <button onclick="solid()">Solid</button>
+                <button onclick="double()">Double</button>
+                <button onclick="groove()">Groove</button>
+            </div>
+
+
+            <div style="text-align: center;">
+                <h1>Outline</h1>
+            </div>
+            <div class="buttons">
+                <button onclick="oridge()">Ridge</button>
+                <button onclick="oinset()">Inset</button>
+                <button onclick="onone()">None</button>
+                <button onclick="odotted()">Dotted</button>
+                <button onclick="odashed()">Dashed</button>
+                <button onclick="osolid()">Solid</button>
+                <button onclick="odouble()">Double</button>
+                <button onclick="ogroove()">Groove</button>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
