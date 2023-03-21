@@ -40,28 +40,17 @@ background: var(--light-Blue);
 }
 
 body{
-    margin: 0;  
+    margin: 0px;  
 
     background-image: var(--BG2-Gradient);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
 }
-#blur{
-    position: fixed;
-    z-index: 1;
-
-   
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    
-
-    height: 55px;
-    width: 100%;
-}
 
 header{
+    position: sticky;
+    top: 0;
     z-index: 2;
     display: flex;
     justify-content: space-between;
@@ -73,34 +62,47 @@ header{
     border-bottom: 2px solid;
     border-color: var(--light-Blue);
 
-    position: sticky;
-    top: 0;
+    backdrop-filter: blur(5px);
 }
 header span{
     padding-left: var(--header-Padding);
     margin-top: 10px;
     font-size: 30px;
+    font-weight: bolder;
+    color: var(--Highlight);
 }
+
 
 nav ul{
-    list-style-type: none;
+    margin: 0;
+    
+
+    display: flex;
     border-right: 5px;
+    
+    
 }
 
-nav ul li{
-    display: inline-block;
+header nav ul li{
+    list-style-type: none;    
     justify-content:space-evenly;
     border-color: black;
     font-size: 20px;
+    border-right:1px dotted ;
+
     padding-right: var(--header-Padding);
+    padding-left: var(--header-Padding);
+    padding-top: 10px;
 }
 aside{
     position: fixed;
+    z-index: 1;
+    
 
     top: 40%;
 
     background-image: var(--BG3-Gradient);
-    width: 5%;
+    width: 5.5%;
     
 
     border-top-right-radius: 20px;
@@ -109,19 +111,46 @@ aside{
     outline: 3px solid;
     outline-color: var(--lighter-Blue);
 }
-aside ul{
+aside nav ul{
     list-style-type: none;
-}
-aside ul li{
-    position: relative;
-    right: 20px;
-    bottom: 5px;
     display: block;
+}
+aside nav ul li{
+    position: relative;
+    right: 30px;
+    bottom: 5px;
+    
+    text-align: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 15px;
+    
+    border-bottom: 1px dotted var(--lighter-Blue);
 
     color: var(--Highlight);
-
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+#woman{
+    padding-left: 40px; 
+    height: 500px;
+    cursor: pointer;
+}
+#hlinks{
+    text-decoration: none;
+    color: var(--light-Blue);
+}
+.active{
+    background-color: #0a1434a3;
+    height: 100%;
+    
+}
+#woman:hover{
+    opacity: .8;
+    padding-left: 40px; 
+    height: 500px;
+}
 
 #bgImgS1{
     position: absolute;
