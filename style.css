@@ -22,10 +22,13 @@ background: var(--light-Blue);
 :root{
     --BG-Color: rgb(26,20,32);
     --BG1-Color: rgb(31,30,48);
-    --BG2-Color: rgb(31, 33, 65);
-    --BG3-Color: rgb(55, 31, 65);
+    --BG2-Color: rgba(31, 33, 65, 0.479);
+    --BG3-Color: rgb(65, 31, 54);
+    --BG3v1-Color: rgb(30, 15, 54);
+    --BG4-Color: rgba(46, 46, 87, 0.932);
     --BG-Gradient: linear-gradient(to top, var(--BG1-Color),var(--BG2-Color));
-    --BG2-Gradient: linear-gradient(20deg, var(--BG1-Color),var(--BG3-Color));
+    --BG2-Gradient: linear-gradient(to right, var(--BG1-Color),var(--BG3-Color));
+    --BG3-Gradient:  linear-gradient(0deg,  var(--BG4-Color),var(--BG2-Color));
     --light-Blue: rgb(157, 208,207);
     --lighter-Blue: rgb(197,255,253); 
     --Highlight: rgb(255, 58, 166);
@@ -39,18 +42,32 @@ background: var(--light-Blue);
 body{
     margin: 0;  
 
-
     background-image: var(--BG2-Gradient);
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
 }
-header{
+#blur{
+    position: fixed;
     z-index: 1;
+
+   
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    
+
+    height: 55px;
+    width: 100%;
+}
+
+header{
+    z-index: 2;
     display: flex;
     justify-content: space-between;
 
-    background-image: var(--BG-Gradient);
+    background-image: var(--BG3-Gradient);
+    
     color: var(--light-Blue);
 
     border-bottom: 2px solid;
@@ -59,29 +76,61 @@ header{
     position: sticky;
     top: 0;
 }
-
-header h1{
+header span{
     padding-left: var(--header-Padding);
-    font-family: var(--Font);
+    margin-top: 10px;
+    font-size: 30px;
 }
 
 nav ul{
-    position: relative;
     list-style-type: none;
-
-    margin-top: 11%;
-    
-    
+    border-right: 5px;
 }
 
 nav ul li{
     display: inline-block;
     justify-content:space-evenly;
-    border-right: 5px;
     border-color: black;
     font-size: 20px;
     padding-right: var(--header-Padding);
 }
+aside{
+    position: fixed;
+
+    top: 40%;
+
+    background-image: var(--BG3-Gradient);
+    width: 5%;
+    
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    outline: 3px solid;
+    outline-color: var(--lighter-Blue);
+}
+aside ul{
+    list-style-type: none;
+}
+aside ul li{
+    position: relative;
+    right: 20px;
+    bottom: 5px;
+    display: block;
+
+    color: var(--Highlight);
+
+}
+
+
+#bgImgS1{
+    position: absolute;
+    z-index: -1;
+
+    width: 600px;
+    opacity: .3;
+}
+
 
 .gui{
     display: flex;
@@ -104,7 +153,7 @@ nav ul li{
 .instruction{
     position: absolute;
 
-    right: 10%;
+    right: 8%;
     width: 300px;
 
     font-family: Arial, Helvetica, sans-serif;
