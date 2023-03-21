@@ -26,9 +26,13 @@ background: var(--light-Blue);
     --BG3-Color: rgb(65, 31, 54);
     --BG3v1-Color: rgb(30, 15, 54);
     --BG4-Color: rgba(46, 46, 87, 0.932);
+
     --BG-Gradient: linear-gradient(to top, var(--BG1-Color),var(--BG2-Color));
     --BG2-Gradient: linear-gradient(to right, var(--BG1-Color),var(--BG3-Color));
     --BG3-Gradient:  linear-gradient(0deg,  var(--BG4-Color),var(--BG2-Color));
+
+    --shadow: #0a1434a3;
+    --shadow2: #340a2da3;
     --light-Blue: rgb(157, 208,207);
     --lighter-Blue: rgb(197,255,253); 
     --Highlight: rgb(255, 58, 166);
@@ -103,17 +107,19 @@ aside{
 
     background-image: var(--BG3-Gradient);
     width: 5.5%;
-    
-
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
 
     outline: 3px solid;
     outline-color: var(--lighter-Blue);
 }
 aside nav ul{
+    position: relative;
+    top: 5px;
+    right: 10px;
     list-style-type: none;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 75px;
+
 }
 aside nav ul li{
     position: relative;
@@ -141,10 +147,12 @@ aside nav ul li{
     text-decoration: none;
     color: var(--light-Blue);
 }
-.active{
-    background-color: #0a1434a3;
+.hactive{
+    background-color: var(--shadow) ;
     height: 100%;
-    
+}
+.sactive{    
+    background-color: var(--shadow2);
 }
 #woman:hover{
     opacity: .8;
