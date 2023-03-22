@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-height: 3px;
+height: 10px;
 width: 3px;
 }
 
@@ -23,6 +23,7 @@ background: var(--light-Blue);
     --BG-Color: rgb(26,20,32);
     --BG1-Color: rgb(31,30,48);
     --BG2-Color: rgba(31, 33, 65, 0.479);
+    --BG2v1-Color: rgba(19, 15, 39, 0.808);
     --BG3-Color: rgb(65, 31, 54);
     --BG3v1-Color: rgb(30, 15, 54);
     --BG4-Color: rgba(46, 46, 87, 0.932);
@@ -38,6 +39,7 @@ background: var(--light-Blue);
     --Highlight: rgb(255, 58, 166);
     --Txt-Highlight: rgb(1, 22, 22);
   
+    --opacity: 2s;
 
     --header-Padding: 30px;
     --Font: 'arial';
@@ -53,6 +55,9 @@ body{
 }
 
 header{
+    animation-name: topSlide;
+    animation-duration: 0.5s;
+
     position: sticky;
     top: 0;
     z-index: 2;
@@ -99,6 +104,9 @@ header nav ul li{
     padding-top: 10px;
 }
 aside{
+    animation-name: leftSlide;
+    animation-duration: 1s;
+
     position: fixed;
     z-index: 1;
     
@@ -166,8 +174,15 @@ aside nav ul li{
 
     width: 600px;
     opacity: .3;
+    top: 0px;
+    bottom: 10px;
+    
 }
 
+#border{
+    animation-name: opacityAnimation;
+    animation-duration: 3s;
+}
 
 .gui{
     display: flex;
@@ -247,4 +262,53 @@ aside nav ul li{
     margin-left: 5px;
 
     cursor: pointer;
+}
+
+.letter{
+    position: relative;
+    top: 65px;
+    bottom: 100%;
+
+    background-color: var(--BG2v1-Color);
+    border-radius: 70% 0% 0 0;;
+    border-top: 2px solid;
+    border-color: var(--light-Blue);
+    color: lightblue;
+
+    backdrop-filter: blur(13px);
+}
+#titlelet{
+    color: var(--lighter-Blue);
+    text-shadow: 2px 3px var(--Highlight);
+}
+footer{
+    animation-name: opacityAnimation;
+    animation-duration: 3s;
+}
+
+
+@keyframes topSlide{
+    from {
+        transform: translateY(-200px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+@keyframes leftSlide{
+    from{
+        transform: translateX(-200px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes opacityAnimation{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
